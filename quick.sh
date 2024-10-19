@@ -7,5 +7,9 @@ elif [ "$1" == "new" ] ;
 then
     cp modules/temp.cxx "$2.cxx"
     code "$2.cxx"
+elif [ "$1" == "googer" ] ;
+then 
+    cp modules/googer.cxx "$2.cxx"
+    code "$2.cxx"
 fi
 echo "Done"

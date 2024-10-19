@@ -52,16 +52,13 @@ int main()
             cin>>b[i];
         FOR(1,n)
         {
-            /*
-            The height of a Fenwick Tree is O(logn) , so operations like enumerating ancestors of each vertex will be acceptable.
-            - what are the coefficients of a_N and b with its ancestors
-            */
             UI64 c=1;
             for(UI64 d=1,j=i+LOWBIT(i);j<=n;j+=LOWBIT(i),d++)
             {
                 c*=((d+k-1)*inv[d]%MOD)%MOD;
-                b[j]-=((b[j]-c*b[i]))%(MOD+MOD)%MOD;
-                TRACE_IT(b[j])
+                b[j]-=b[j]-c*inv[d];
+                b[j]%=MOD+MOD;
+                b[j]%=MOD;
             }
         }
         FOR(1,n)
