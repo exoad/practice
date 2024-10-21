@@ -7,5 +7,10 @@ using namespace std;
 #define STR string
 I32 main()
 {
-    
+    I64 n;
+    cin>>n;
+    if(n<5) cout<<"NO SOLUTION";
+    else {
+        
+    }
 }

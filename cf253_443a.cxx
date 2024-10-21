@@ -7,5 +7,10 @@ using namespace std;
 #define STR string
 I32 main()
 {
-    
+    STR s;
+    cin>>s;
+    for(I32 i=0;i<s.length();i++)
+    {
+        
+    }
 }
