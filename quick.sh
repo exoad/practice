@@ -11,5 +11,12 @@ elif [ "$1" == "googer" ] ;
 then 
     cp modules/googer.cxx "$2.cxx"
     code "$2.cxx"
+elif [ "$1" == "dart" ] ;
+then
+    cp modules/main.dart "$2.dart"
+    code "$2.dart"
+elif [ "$1" == "rdart" ] ;
+then
+    dart "$2.dart"
 fi
 echo "Done"
