@@ -1,6 +1,6 @@
 if [ "$1" == "go" ] ;
 then 
-    g++ "$2.cxx" -o temp.out
+    g++ -Wall -Wextra -O2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fsanitize=undefined -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align "$2.cxx" -o temp.out
     echo -e "\e[31;41;1m============[ENTRY-POINT]=============\e[0m"
     ./temp.out
 elif [ "$1" == "new" ] ;

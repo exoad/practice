@@ -6,19 +6,55 @@ import java.util.StringTokenizer;
 
 public class Main 
 {
-    public static int test(String x) {
-        s=s.trim();
-        StringBuffer bf=new StringBuffer();
-        for(int i=0;i<s.length();i++)
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
+
+        public FastReader()
         {
-            if(s.charAt(i)=='-'&&i==0)
-                bf.append("-");
-            else if(s.charAt(i)<='9'&&s.charAt(i)>='0')
-                bf.append(s.charAt(i)+"");
-            else
-                break;
+            br = new BufferedReader(
+                new InputStreamReader(System.in));
         }
-        return Integer.parseInt(bf.toString());
+
+        String next()
+        {
+            while (st == null || !st.hasMoreElements()) {
+                try {
+                    st = new StringTokenizer(br.readLine());
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+
+        int nextInt(){ 
+            return Integer.parseInt(next()); }
+
+        long nextLong() { return Long.parseLong(next()); }
+
+        double nextDouble()
+        {
+            return Double.parseDouble(next());
+        }
+
+        String nextLine()
+        {
+            String str = "";
+            try {
+                if(st.hasMoreTokens()){
+                    str = st.nextToken("\n");
+                }
+                else{
+                    str = br.readLine();
+                }
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
+        }
     }
 
     public static void main(String... args)
