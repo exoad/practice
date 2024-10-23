@@ -65,8 +65,10 @@ U0 setIO(STR name="")
 		freopen((name+".out").c_str(),"w",stdout);
 	}
 }
+// -------------------------- //
 // -- コンテストに参加する前に -- //
-STATIC I32 MAX_N=120;
+// -------------------------- //
+STATIC I32 MAX_N=200;
 I64 c[MAX_N];
 MAP_I64_I64 dp;
 I64 __cf(I64 v)
