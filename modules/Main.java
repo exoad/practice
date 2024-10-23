@@ -18,19 +18,24 @@ public class Main
 
         String next()
         {
-            while (st == null || !st.hasMoreElements()) {
-                try {
-                    st = new StringTokenizer(br.readLine());
+            while (st==null||!st.hasMoreElements())
+            {
+                try 
+                {
+                    st=new StringTokenizer(br.readLine());
                 }
-                catch (IOException e) {
+                catch(IOException e) 
+                {
                     e.printStackTrace();
                 }
             }
             return st.nextToken();
         }
 
-        int nextInt(){ 
-            return Integer.parseInt(next()); }
+        int nextInt()
+        { 
+            return Integer.parseInt(next()); 
+        }
 
         long nextLong() { return Long.parseLong(next()); }
 
@@ -60,6 +65,6 @@ public class Main
     public static void main(String... args)
         throws Exception
     {
-        System.out.println(isPalindrome(1001));
+        FastRead in=FastReader();
     }
 }

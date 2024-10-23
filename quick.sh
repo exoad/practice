@@ -16,7 +16,14 @@ then
     cp modules/main.dart "$2.dart"
     code "$2.dart"
 elif [ "$1" == "rdart" ] ;
-then
+then   
     dart "$2.dart"
+elif [ "$1" == "jj" ] ;
+then
+    cp modules/Main.java "Main_$2.java"
+    code "Main_$2.java"
+elif [ "$1" == "rj" ] ;
+then 
+    java "Main_$2.java"
 fi
 echo "Done"
