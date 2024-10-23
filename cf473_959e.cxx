@@ -65,8 +65,7 @@ U0 setIO(STR name="")
 		freopen((name+".out").c_str(),"w",stdout);
 	}
 }
-// -- SOLVE -- //
-// why segfault bruh
+// -- コンテストに参加する前に -- //
 STATIC I32 MAX_N=120;
 I64 c[MAX_N];
 MAP_I64_I64 dp;
