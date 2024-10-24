@@ -68,7 +68,7 @@ U0 setIO(STR name="")
 // --------------------------------- //
 // 問題 ~ コンテストに参加する前に ~ 問題 //
 // --------------------------------- //
-STATIC I32 MAX_N=2e5+1;
+STATIC I32 MAX_N=2e5+10;
 I32 dp[MAX_N],a[MAX_N];
 vector<I32> graph[MAX_N];
 U0 dfs(I32 u,I32 f)
@@ -81,7 +81,8 @@ U0 dfs(I32 u,I32 f)
         dfs(v,u);
     }
 }
-U0 e(I32 u,I32 f){
+U0 e(I32 u,I32 f)
+{
     dp[u]=a[u];
     for(I32 v:graph[u])
     {
@@ -94,16 +95,16 @@ U0 e(I32 u,I32 f){
 }
 I32 main()
 {
+    // WA SAMPLES :(
     // setIO();
     I32 n;
     cin>>n;
     for(I32 i=1;i<=n;i++)
     { 
         cin>>a[i];
-        a[i]*=2;
-        a[i]--;
+        a[i]=a[i]*2-1;
     }
-    for(I32 i=0;i<n;i++)
+    for(I32 i=0;i<n-1;i++)
     {
         I32 u_i,v_i;
         cin>>u_i>>v_i;

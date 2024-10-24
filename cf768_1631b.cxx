@@ -68,26 +68,9 @@ U0 setIO(STR name="")
 // --------------------------------- //
 // 問題 ~ コンテストに参加する前に ~ 問題 //
 // --------------------------------- //
-STATIC I32 MAX_N=500;
-I64 c[MAX_N];
-map<I32,I32> dp;
-I64 __cf(I64 v)
-{
-    if(v==0||v==1)
-        return v;
-    else if(dp[v]==TRUE)
-        return dp[v];
-    I64 d=c[(I32)log2(v)];
-    cout<<"v="<<v<<" "<<dp[v]<<endl;
-    dp[v]=__cf(v-d)+__cf(d-1)+__cf(d);
-    return dp[v];
-}
+
 I32 main()
 {
     // setIO();
-    // 10 -> 10 [JUDGE: 21]
-    I64 n;
-    cin>>n;
-    cout<<__cf(n);      
     return 0;
 }
