@@ -59,36 +59,32 @@ constexpr I32 b__(I32 r)
 U0 setIO(STR name="") 
 {
 	cin.tie(0)->sync_with_stdio(0);
-	if(sz(name)) 
+	if (sz(name)) 
     {
 		freopen((name+".in").c_str(),"r",stdin); 
 		freopen((name+".out").c_str(),"w",stdout);
 	}
 }
-// -------------------------- //
-// -- コンテストに参加する前に -- //
-// -------------------------- //
-STATIC I32 MAX_N=200;
-I64 c[MAX_N];
-MAP_I64_I64 dp;
-I64 __cf(I64 v)
-{
-    // 4 -> 4
-    // 10 -> 10 ( WA for 21 )
-    if(v==0||v==1)
-        return v;
-    else if(dp[v]==TRUE)
-        return dp[v];
-    I64 d=c[(I64)log2(v)];
-    cout<<"v="<<v<<" "<<dp[v]<<endl;
-    dp[v]=__cf(v-d)+__cf(d-1)+__cf(d);
-    return dp[v];
-}
+// --------------------------------- //
+// 問題 ~ コンテストに参加する前に ~ 問題 //
+// --------------------------------- //
+STATIC I32 MAX=501; // LB[501]
+I32 n,k,c[MAX*2];
+bitset<MAX> dp[MAX*2];
 I32 main()
 {
-    setIO();
-    I64 n;
-    cin>>n;
-    cout<<__cf(n);      
+    // WA X Test#58
+    // setIO("test_in");
+    cin>>n>>k;
+    for(I32 i=0;i<n;i++)
+        cin>>c[i];
+    dp[0].set(0,TRUE);
+    for(I32 i=0;i<n;i++)
+        for(I32 j=k;j>=c[i];j--) 
+            dp[j]|=(dp[j-c[i]]<<c[i])|dp[j-c[i]];
+    cout<<dp[k].count()<<"\n";
+    for(I32 i=0;i<=k;i++)
+        if(dp[k][i]==TRUE)
+            cout<<i<<" ";   
     return 0;
 }

@@ -59,36 +59,25 @@ constexpr I32 b__(I32 r)
 U0 setIO(STR name="") 
 {
 	cin.tie(0)->sync_with_stdio(0);
-	if(sz(name)) 
+	if (sz(name)) 
     {
 		freopen((name+".in").c_str(),"r",stdin); 
 		freopen((name+".out").c_str(),"w",stdout);
 	}
 }
-// -------------------------- //
-// -- コンテストに参加する前に -- //
-// -------------------------- //
-STATIC I32 MAX_N=200;
-I64 c[MAX_N];
-MAP_I64_I64 dp;
-I64 __cf(I64 v)
-{
-    // 4 -> 4
-    // 10 -> 10 ( WA for 21 )
-    if(v==0||v==1)
-        return v;
-    else if(dp[v]==TRUE)
-        return dp[v];
-    I64 d=c[(I64)log2(v)];
-    cout<<"v="<<v<<" "<<dp[v]<<endl;
-    dp[v]=__cf(v-d)+__cf(d-1)+__cf(d);
-    return dp[v];
-}
+// --------------------------------- //
+// 問題 ~ コンテストに参加する前に ~ 問題 //
+// --------------------------------- //
+STATIC I32 MOD=1e9+7;
 I32 main()
 {
-    setIO();
-    I64 n;
-    cin>>n;
-    cout<<__cf(n);      
+    setIO("test_in");
+    I32 t;
+    cin>>t;
+    while(t--) 
+    {
+        STR s;
+        cin>>s;
+    }
     return 0;
 }

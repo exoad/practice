@@ -1,7 +1,7 @@
 if [ "$1" == "go" ] ;
 then 
     g++ -Wall -Wextra -O2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fsanitize=undefined -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -march=x86-64 "$2.cxx" -o temp.out
-    echo -e "\e[31;41;1m============[ENTRY-POINT]=============\e[0m"
+    echo -e "\e[31;41;1m============[==入力==]=============\e[0m"
     ./temp.out
 elif [ "$1" == "new" ] ;
 then
@@ -11,6 +11,7 @@ elif [ "$1" == "googer" ] ;
 then 
     cp modules/googer.cxx "$2.cxx"
     code "$2.cxx"
+    echo -e "\e[37;42;1m[✓]( ͡°👅 ͡°)[==出力==]\e[0m"
 elif [ "$1" == "dart" ] ;
 then
     cp modules/main.dart "$2.dart"
@@ -26,4 +27,3 @@ elif [ "$1" == "rj" ] ;
 then 
     java "Main_$2.java"
 fi
-echo "Done"
